@@ -1,0 +1,97 @@
+=================
+INSTALL BundleMan
+=================
+:author: Benoit Delbosc
+
+:address: bdelbosc _at_ nuxeo.com
+
+:revision: $Id: INSTALL.txt 50852 2007-01-18 10:34:49Z madarche $
+
+:abstract: This document describes how to install the BundleMan_ tool.
+
+.. sectnum::  :depth: 1
+.. contents:: Table of Contents
+
+
+OS support
+----------
+
+Should work on an any unices.
+
+
+Requirements
+------------
+
+* python 2.4 (python 2.3 to be tested)
+
+* subversion >= 1.2.0 (requires ``--ignore-externals`` and ``info`` on URL...)
+
+* rm, grep, tar, sort, find, xargs, md5sum
+
+
+Install
+-------
+
+* Get the latest package from the Python `Cheese Shop`_
+
+* Extract the archive::
+
+    tar xzvf bundleman-X.Y.Z.tar.gz
+    cd bundleman
+
+* Install bundleman either with::
+
+    sudo make install
+
+  or using the pythonic way::
+
+    python setup.py build
+    sudo python setup.py install
+
+* You should run the unit tests to check that bundleman is working on your
+  system with::
+
+    python setup.py test
+
+  It takes ~ 2 minutes.
+
+* Note that you can also use EasyInstall_::
+
+    sudo easy_install bundleman
+
+
+Checkout SVN version
+--------------------
+
+If you want to try the latest unstable sources from SVN ::
+
+    svn co https://svn.nuxeo.org/pub/tools/bundleman/trunk bundleman
+    cd bundleman
+    sudo make install
+
+Uninstall
+---------
+
+From the archive extraction::
+
+    sudo make uninstall
+
+
+
+--------------------------
+
+See README_ for more information about BundleMan_.
+
+See CHANGES_ for information on BundleMan_ packages.
+
+.. _BundleMan: http://public.dev.nuxeo.com/~ben/bundleman/
+.. _`Cheese Shop`: http://www.python.org/pypi/bundleman
+.. _README: README.html
+.. _CHANGES: CHANGES.html
+.. _EasyInstall: http://peak.telecommunity.com/DevCenter/EasyInstall
+
+
+.. Local Variables:
+.. mode: rst
+.. End:
+.. vim: set filetype=rst:

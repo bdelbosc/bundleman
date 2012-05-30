@@ -1,0 +1,4 @@
+include *.txt Makefile MANIFEST MANIFEST.in
+recursive-include tests *.py *.txt Makefile
+recursive-include doc *.css Makefile
+

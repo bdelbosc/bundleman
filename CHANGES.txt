@@ -1,0 +1,150 @@
+==================
+BundleMan_ CHANGES
+==================
+
+:author: Benoit Delbosc
+
+:address: bdelbosc _at_ nuxeo.com
+
+:revision: $Id: CHANGES.txt 34832 2006-03-30 07:54:12Z bdelbosc $
+
+:abstract: This document describes changes between BundleMan_ versions.
+
+.. contents:: Table of Contents
+
+
+
+BundleMan SVN trunk
+-------------------
+
+:Location: http://svn.nuxeo.org/pub/tools/bundleman/trunk/
+
+:Target: ?
+
+
+BundleMan 1.3.0
+---------------
+
+:Location: http://svn.nuxeo.org/pub/tools/bundleman/tags/1.3.0
+
+:Released date: 2009-03-26
+
+:`Cheesecake  index`_: 455 out of a maximum of 545 points is 85%
+
+
+New features
+~~~~~~~~~~~~
+
+* bm-bundle new ``--archive-name`` option to set the archive name.
+
+* bm-bundle packages and tags the contents that are not externals.
+
+* Optimization: do not call the "analyze" method (which is a resource consuming
+  action on the SVN repository) to build an archive after a release process.
+
+
+BundleMan 1.2.0
+---------------
+
+:Location: http://svn.nuxeo.org/pub/tools/bundleman/tags/1.2.0
+
+:Released date: 2007-04-10
+
+:`Cheesecake  index`_: 464 out of a maximum of 545 points is 85%
+
+
+New features
+~~~~~~~~~~~~
+
+* bm-bundle new ``--archive-root-directoy`` option to set the root directory
+  inside the targz archive, default is the release name.
+
+* bm-bundle handles product with a checkout directory inside another
+  product for example you can have an svn:externals like this::
+
+    foo      http://path/svn/products/foo/trunk
+    foo/bar  http://path/svn/products/bar/trunk
+
+
+BundleMan 1.1.0
+---------------
+
+:Location: http://svn.nuxeo.org/pub/tools/bundleman/tags/1.1.0
+
+:Released date: 2006-10-18
+
+:`Cheesecake  index`_: 464 out of a maximum of 545 points is 85%
+
+Requires
+~~~~~~~~
+
+* You need to reinit your products with a ``bm-product --init`` in order
+  to set up the new svn property.
+
+New features
+~~~~~~~~~~~~
+
+* bm-bundle new ``--scp remote_path`` option to scp an archive.
+
+* bm-bundle can release, add a global changelog and create an archive in one
+  step ``bm-bundle --release APPrc2 --changelog APPrc1: -a``.
+
+* ``bm-product --init`` now set a svn property named bundleman.
+
+* Handles svn url that contains '/3dparty/' like '/vendor/' svn url.
+
+* bm-* handles a new ``--log-file LOG_FILE`` or ``-l`` option to set the log
+  file path. Default is set to ``~/bundleman.log``. The bm-* command
+  arguments is also logged.
+
+* bm-product new ``--archive-url`` option to create an archive without
+  having a working copy.
+
+Bug Fixes
+~~~~~~~~~
+
+* Traceback with product that have a VERSION and CHANGES files but not
+  managed with bundleman.
+
+* fix: bm-* archive failed with file that contains spaces.
+
+* python setup.py test now launch doctests and check that svn version >= 1.2
+
+
+BundleMan 1.0.0
+---------------
+
+:Location: http://svn.nuxeo.org/pub/tools/bundleman/tags/1.0.0
+
+:Released date: 2006-09-19
+
+:`Cheesecake  index`_: 464 out of a maximum of 545 points is 85%
+
+
+New features
+~~~~~~~~~~~~
+
+* First release
+
+
+
+---------------------------------------------
+
+See the INSTALL_ file for requirement and installation.
+
+See README_ for more information about BundleMan_.
+
+
+
+.. _BundleMan: http://public.dev.nuxeo.com/~ben/bundleman/
+.. _README: README.html
+.. _INSTALL: INSTALL.html
+.. _API: api/index.html
+.. _epydoc: http://epydoc.sourceforge.net/
+.. _`Cheesecake index`: http://pycheesecake.org/
+
+
+.. Local Variables:
+.. mode: rst
+.. End:
+.. vim: set filetype=rst:

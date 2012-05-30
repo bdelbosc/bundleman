@@ -1,0 +1,62 @@
+==============
+TODO BundleMan
+==============
+$Id: TODO.txt 50498 2006-12-05 09:20:57Z bdelbosc $
+
+
+BUGS
+----
+
+* bug: if the svn url point to an invalid url with a tags the status is
+  already released (use_tag status) instead of invalid.
+
+* bug: bm-bundle --archive A_OLD_TAG
+  if there are differents products in the old tag than the wc
+  this will raise some errors, should not analyzed products with --archive.
+
+* handles weird cases like bundle with
+
+  - product -r1234 path/product/trunk
+
+    what if product wc is != r1234 ?
+    releasing should be done like a tag ?
+
+  - product path/product/trunk
+
+    but the wc is switched to a branch ?
+
+* bug: do not work with svn 1.1x (sarge stable)
+
+
+FEATURES
+--------
+
+* bm-*
+   --archive-url for bm-bundle without having wc
+   --sign sign an archive
+   --archive should create a .md5 file
+
+* bm-product --init should ask to create branches/tags layouts if
+  branches or tags are missing.
+
+* bm-bundle
+
+   --merge=RELEASE_TAG
+       for each product
+       switch to trunk
+
+   --switch=RELEASE_TAG
+       for each product switch (!= svn switch from a bundle)
+
+   --clean-branch=RELEASE_TAG -> remove all product branch with the tag
+
+   --archive-directory=DIR
+       Directory contained in the generated archive.
+       By default the directory in the archive has the same
+       name than the archive itself.
+
+* manages bundleman with bundleman ?
+
+
+.. Local Variables:
+.. mode: rst
